@@ -6,17 +6,18 @@
         <script src="app.js"></script>
         <script src="controllers.js"></script>
         <script src="services.js"></script>
+        <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="Movies" ng-controller="movieCtrl">
         <form novalidate>
         <input type="text" ng-model="search" />
         <button id="button" ng-click="go()">Go!</button>
         </form>
-        <p> {{ movie }} </p>
+        <p ng-class="{true: 'green', false: 'red'}[firstGreater]"> {{ movie }} </p>
         <form novalidate>
         <input type="text" ng-model="search" />
         <button id="button" ng-click="go()">2!</button>
         </form>
-        <p> {{ movie2 }} </p>
+        <p ng-class="{true: 'green', false: 'red'}[secGreater]"> {{ movie2 }} </p>
 </body>
 </html>
