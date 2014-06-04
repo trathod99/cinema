@@ -9,15 +9,24 @@
         <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="Movies" ng-controller="movieCtrl">
+        <h1>Test!</h1>
         <form novalidate>
-        <input type="text" ng-model="search" />
-        <button id="button" ng-click="go()">Go!</button>
+        <input type="text" ng-keyup="go()" ng-model="search" />
+        <button id="button">Go!!!</button>
         </form>
-        <p ng-class="{true: 'green', false: 'red'}[firstGreater]"> {{ movie }} </p>
+        <p> {{movie}} </p>
+        <li><a href="" ng-click="select(0, results)"> {{ results.movies[0].title }} </a></li>
+        <li><a href="" ng-click="select(1, results)"> {{ results.movies[1].title }} </a></li>
+        <li><a href="" ng-click="select(2, results)"> {{ results.movies[2].title }} </a></li>
+        <li><a href="" ng-click="select(3, results)"> {{ results.movies[3].title }} </a></li>
+        <li><a href="" ng-click="select(4, results)"> {{ results.movies[4].title }} </a></li>
+        <li><a href="" ng-click="select(5, results)"> {{ results.movies[5].title }} </a></li>
+        <li><a href="" ng-click="select(6, results)"> {{ results.movies[6].title }} </a></li>
+        <!-- <p ng-class="{true: 'green', false: 'red'}[firstGreater]"> {{ movie }} </p>
         <form novalidate>
-        <input type="text" ng-model="search" />
+        <input type="text" ng-model="search"/>
         <button id="button" ng-click="go()">2!</button>
         </form>
-        <p ng-class="{true: 'green', false: 'red'}[secGreater]"> {{ movie2 }} </p>
+        <p ng-class="{true: 'green', false: 'red'}[secGreater]"> {{ movie2 }} </p> -->
 </body>
 </html>
