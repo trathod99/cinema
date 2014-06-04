@@ -9,33 +9,36 @@
         <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="Movies" ng-controller="movieCtrl">
-        <h1>Test!</h1>
-        <button id="button" ng-click="compare()">Compare!</button>
-        <form novalidate>
-        <input type="text" ng-keyup="go()" ng-model="search" />
-        </form>
-        <p ng-class="{true: 'green', false: 'red'}[firstGreater]"> {{ movie }} </p>
-        <li><a href="" ng-click="select(0, results)"> {{ results.movies[0].title }} </a></li>
-        <li><a href="" ng-click="select(1, results)"> {{ results.movies[1].title }} </a></li>
-        <li><a href="" ng-click="select(2, results)"> {{ results.movies[2].title }} </a></li>
-        <li><a href="" ng-click="select(3, results)"> {{ results.movies[3].title }} </a></li>
-        <li><a href="" ng-click="select(4, results)"> {{ results.movies[4].title }} </a></li>
-        <li><a href="" ng-click="select(5, results)"> {{ results.movies[5].title }} </a></li>
-        <li><a href="" ng-click="select(6, results)"> {{ results.movies[6].title }} </a></li>
-
-        <br />
-        <br />
-
-        <form novalidate>
-        <input type="text" ng-model="search2" ng-keyup="go()" />
-        </form>
-        <li><a href="" ng-click="select2(0, results2)"> {{ results2.movies[0].title }} </a></li>
-        <li><a href="" ng-click="select2(1, results2)"> {{ results2.movies[1].title }} </a></li>
-        <li><a href="" ng-click="select2(2, results2)"> {{ results2.movies[2].title }} </a></li>
-        <li><a href="" ng-click="select2(3, results2)"> {{ results2.movies[3].title }} </a></li>
-        <li><a href="" ng-click="select2(4, results2)"> {{ results2.movies[4].title }} </a></li>
-        <li><a href="" ng-click="select2(5, results2)"> {{ results2.movies[5].title }} </a></li>
-        <li><a href="" ng-click="select2(6, results2)"> {{ results2.movies[6].title }} </a></li>
-        <p ng-class="{true: 'green', false: 'red'}[secGreater]"> {{ movie2 }} </p>
+        <h1>Cinema App</h1>
+        <div class="movie" id="movie1">
+                <form novalidate>
+                        <input type="text" ng-keyup="go()" ng-model="search" />
+                </form>
+                <p ng-class="{true: 'green', false: 'red'}[firstGreater]"> {{ movie }} </p>
+                <div class="results">
+                        <li><a href="" ng-click="select(0, results)"><img ng-src="{{ results.movies[0].posters.thumbnail }}" /> {{ results.movies[0].title }} </a></li>
+                        <li><a href="" ng-click="select(1, results)"><img ng-src="{{ results.movies[1].posters.thumbnail }}" /> {{ results.movies[1].title }} </a></li>
+                        <li><a href="" ng-click="select(2, results)"><img ng-src="{{ results.movies[2].posters.thumbnail }}" /> {{ results.movies[2].title }} </a></li>
+                        <li><a href="" ng-click="select(3, results)"><img ng-src="{{ results.movies[3].posters.thumbnail }}" /> {{ results.movies[3].title }} </a></li>
+                        <li><a href="" ng-click="select(4, results)"><img ng-src="{{ results.movies[4].posters.thumbnail }}" /> {{ results.movies[4].title }} </a></li>
+                        <li><a href="" ng-click="select(5, results)"><img ng-src="{{ results.movies[5].posters.thumbnail }}" /> {{ results.movies[5].title }} </a></li>
+                        <li><a href="" ng-click="select(6, results)"><img ng-src="{{ results.movies[6].posters.thumbnail }}" /> {{ results.movies[6].title }} </a></li>
+                </div>
+        </div>
+        <div class="movie" id="movie2">
+                <form novalidate>
+                        <input type="text" ng-model="search2" ng-keyup="go()" />
+                </form>
+                <p ng-class="{true: 'green', false: 'red'}[secGreater]"> {{ movie2 }} </p>
+                <div class="results">
+                        <li><a href="" ng-click="select2(0, results2)"><img ng-src="{{ results2.movies[0].posters.thumbnail }}" /> {{ results2.movies[0].title }} </a></li>
+                        <li><a href="" ng-click="select2(1, results2)"><img ng-src="{{ results2.movies[1].posters.thumbnail }}" /> {{ results2.movies[1].title }} </a></li>
+                        <li><a href="" ng-click="select2(2, results2)"><img ng-src="{{ results2.movies[2].posters.thumbnail }}" /> {{ results2.movies[2].title }} </a></li>
+                        <li><a href="" ng-click="select2(3, results2)"><img ng-src="{{ results2.movies[3].posters.thumbnail }}" /> {{ results2.movies[3].title }} </a></li>
+                        <li><a href="" ng-click="select2(4, results2)"><img ng-src="{{ results2.movies[4].posters.thumbnail }}" /> {{ results2.movies[4].title }} </a></li>
+                        <li><a href="" ng-click="select2(5, results2)"><img ng-src="{{ results2.movies[5].posters.thumbnail }}" /> {{ results2.movies[5].title }} </a></li>
+                        <li><a href="" ng-click="select2(6, results2)"><img ng-src="{{ results2.movies[6].posters.thumbnail }}" /> {{ results2.movies[6].title }} </a></li>
+                </div>
+        </div>
 </body>
 </html>

@@ -8,3 +8,15 @@ body {
 .red {
         background-color: red;
 }
+
+div.movie {
+    width:50%;
+}
+
+div#movie1 {
+    float:left;
+}
+
+div#movie2 {
+    float:right;
+}
