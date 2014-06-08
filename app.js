@@ -1,4 +1,5 @@
 angular.module('Movies', [
         'Movies.controllers',
-        'Movies.services'
+        'Movies.services',
+        'Movies.filters'
 ]);

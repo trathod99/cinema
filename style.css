@@ -1,6 +1,24 @@
 body {
         font-family: sans-serif;
 }
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+}
+
+form {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
 .green {
         background-color: green;
 }
@@ -12,6 +30,29 @@ body {
 div.movie {
     width:50%;
 }
+
+    div.results {
+        background-color: #eee;
+        margin: 0px 20%;
+        max-width:60%;
+    }
+
+        div.results p {
+            height: 70px;
+            margin:0px;
+        }
+
+            div.results p img {
+                height:60px;
+                margin: 5px;
+                width:auto;
+                float:left;
+            }
+
+            div.results p a {
+                position: relative;
+                top:18px;
+            }
 
 div#movie1 {
     float:left;

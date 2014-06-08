@@ -6,38 +6,63 @@
         <script src="app.js"></script>
         <script src="controllers.js"></script>
         <script src="services.js"></script>
+        <script src="filters.js"></script>
         <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="Movies" ng-controller="movieCtrl">
         <h1>Cinema App</h1>
         <div class="movie" id="movie1">
                 <form novalidate>
-                        <input type="text" ng-keyup="go()" ng-model="search" />
+                        <input type="text" ng-keyup="go(search, 1);" ng-model="search" />
                 </form>
-                <p ng-class="{true: 'green', false: 'red'}[firstGreater]"> {{ movie }} </p>
+                <h2 ng-class="{true: 'green', false: 'red'}[firstGreater]"> {{ movie }} </h2>
                 <div class="results">
-                        <li><a href="" ng-click="select(0, results)"><img ng-src="{{ results.movies[0].posters.thumbnail }}" /> {{ results.movies[0].title }} </a></li>
-                        <li><a href="" ng-click="select(1, results)"><img ng-src="{{ results.movies[1].posters.thumbnail }}" /> {{ results.movies[1].title }} </a></li>
-                        <li><a href="" ng-click="select(2, results)"><img ng-src="{{ results.movies[2].posters.thumbnail }}" /> {{ results.movies[2].title }} </a></li>
-                        <li><a href="" ng-click="select(3, results)"><img ng-src="{{ results.movies[3].posters.thumbnail }}" /> {{ results.movies[3].title }} </a></li>
-                        <li><a href="" ng-click="select(4, results)"><img ng-src="{{ results.movies[4].posters.thumbnail }}" /> {{ results.movies[4].title }} </a></li>
-                        <li><a href="" ng-click="select(5, results)"><img ng-src="{{ results.movies[5].posters.thumbnail }}" /> {{ results.movies[5].title }} </a></li>
-                        <li><a href="" ng-click="select(6, results)"><img ng-src="{{ results.movies[6].posters.thumbnail }}" /> {{ results.movies[6].title }} </a></li>
+
+                        <p><a ng-click="select(0)"><img ng-src="{{ results.movies[0].posters.thumbnail }}" /> {{ results.movies[0].title | truncate:50 }} </a>
+                        <span class="summary"> {{ results.movies[0].critics_consensus | truncate:50 }} </span></p>
+
+                        <p><a ng-click="select(1)"><img ng-src="{{ results.movies[1].posters.thumbnail }}" /> {{ results.movies[1].title | truncate:50 }} </a>
+                        <span class="summary"> {{ results.movies[1].critics_consensus | truncate:50 }} </span></p>
+
+                        <p><a ng-click="select(2)"><img ng-src="{{ results.movies[2].posters.thumbnail }}" /> {{ results.movies[2].title | truncate:50 }} </a>
+                        <span class="summary"> {{ results.movies[2].critics_consensus | truncate:50 }} </span></p>
+
+                        <p><a ng-click="select(3)"><img ng-src="{{ results.movies[3].posters.thumbnail }}" /> {{ results.movies[3].title | truncate:50 }} </a>
+                        <span class="summary"> {{ results.movies[3].critics_consensus | truncate:50 }} </span></p>
+
+                        <p><a ng-click="select(4)"><img ng-src="{{ results.movies[4].posters.thumbnail }}" /> {{ results.movies[4].title | truncate:50 }} </a>
+                        <span class="summary"> {{ results.movies[4].critics_consensus | truncate:50 }} </span></p>
+
+                        <p><a ng-click="select(5)"><img ng-src="{{ results.movies[5].posters.thumbnail }}" /> {{ results.movies[5].title | truncate:50 }} </a>
+                        <span class="summary"> {{ results.movies[5].critics_consensus | truncate:50 }} </span></p>
+
                 </div>
         </div>
         <div class="movie" id="movie2">
                 <form novalidate>
-                        <input type="text" ng-model="search2" ng-keyup="go()" />
+                        <input type="text" ng-model="search2" ng-keyup="go(search2, 2)" />
                 </form>
-                <p ng-class="{true: 'green', false: 'red'}[secGreater]"> {{ movie2 }} </p>
+                <h2 ng-class="{true: 'green', false: 'red'}[secGreater]"> {{ movie2 }} </h2>
                 <div class="results">
-                        <li><a href="" ng-click="select2(0, results2)"><img ng-src="{{ results2.movies[0].posters.thumbnail }}" /> {{ results2.movies[0].title }} </a></li>
-                        <li><a href="" ng-click="select2(1, results2)"><img ng-src="{{ results2.movies[1].posters.thumbnail }}" /> {{ results2.movies[1].title }} </a></li>
-                        <li><a href="" ng-click="select2(2, results2)"><img ng-src="{{ results2.movies[2].posters.thumbnail }}" /> {{ results2.movies[2].title }} </a></li>
-                        <li><a href="" ng-click="select2(3, results2)"><img ng-src="{{ results2.movies[3].posters.thumbnail }}" /> {{ results2.movies[3].title }} </a></li>
-                        <li><a href="" ng-click="select2(4, results2)"><img ng-src="{{ results2.movies[4].posters.thumbnail }}" /> {{ results2.movies[4].title }} </a></li>
-                        <li><a href="" ng-click="select2(5, results2)"><img ng-src="{{ results2.movies[5].posters.thumbnail }}" /> {{ results2.movies[5].title }} </a></li>
-                        <li><a href="" ng-click="select2(6, results2)"><img ng-src="{{ results2.movies[6].posters.thumbnail }}" /> {{ results2.movies[6].title }} </a></li>
+
+                        <p><a ng-click="select2(0)"><img ng-src="{{ results2.movies[0].posters.thumbnail }}" /> {{ results2.movies[0].title | truncate:50 }}</a>
+                        <span class="summary"> {{ results2.movies[0].critics_consensus | truncate:50 }} </span></p>
+
+                        <p><a ng-click="select2(1)"><img ng-src="{{ results2.movies[1].posters.thumbnail }}" /> {{ results2.movies[1].title | truncate:50 }}</a>
+                        <span class="summary"> {{ results2.movies[1].critics_consensus | truncate:50 }} </span></p>
+
+                        <p><a ng-click="select2(2)"><img ng-src="{{ results2.movies[2].posters.thumbnail }}" /> {{ results2.movies[2].title | truncate:50 }}</a>
+                        <span class="summary"> {{ results2.movies[2].critics_consensus | truncate:50 }} </span></p>
+
+                        <p><a ng-click="select2(3)"><img ng-src="{{ results2.movies[3].posters.thumbnail }}" /> {{ results2.movies[3].title | truncate:50 }}</a>
+                        <span class="summary"> {{ results2.movies[3].critics_consensus | truncate:50 }} </span></p>
+
+                        <p><a ng-click="select2(4)"><img ng-src="{{ results2.movies[4].posters.thumbnail }}" /> {{ results2.movies[4].title | truncate:50 }}</a>
+                        <span class="summary"> {{ results2.movies[4].critics_consensus | truncate:50 }} </span></p>
+
+                        <p><a ng-click="select2(5)"><img ng-src="{{ results2.movies[5].posters.thumbnail }}" /> {{ results2.movies[5].title | truncate:50 }}</a>
+                        <span class="summary"> {{ results2.movies[5].critics_consensus | truncate:50 }} </span></p>
+
                 </div>
         </div>
 </body>
